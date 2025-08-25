@@ -1,58 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Xcode Technologies</title>
-  <link rel="stylesheet" href="/style.css">
-  <!-- Optional: Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Test</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-  <!-- Header -->
-  <header class="header">
-    <nav class="navbar">
-      <div class="logo">XcodeTech</div>
-      <ul class="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
-      </ul>
-      <button class="btn-primary">Get Started</button>
-    </nav>
-  </header>
+  <a class="skip" href="#main">Skip to content</a>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Build Modern Web Experiences</h1>
-    <p>We craft responsive, clean, and modern websites for businesses worldwide.</p>
-    <a href="#" class="btn-primary">Learn More</a>
-  </div>
-</section>
+  <header aria-label="Primary header">
+    <div class="container nav" role="navigation" aria-label="Main">
+      <a class="brand" href="#">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Bloomterra</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#solutions">Solutions</a>
+        <a href="#stories">Stories</a>
+        <a href="#hub">Hub</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn btn-ghost" href="#hub" aria-label="Explore the hub">Explore</a>
+        <a class="btn btn-primary" href="#contact" aria-label="Get started">Get started</a>
+      </div>
 
-  <!-- Services Section -->
-  <section class="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Web Development</h3>
-        <p>High-quality, fast-loading, and responsive websites.</p>
-      </div>
-      <div class="service-card">
-        <h3>UI/UX Design</h3>
-        <p>Modern and intuitive user experiences for digital platforms.</p>
-      </div>
-      <div class="service-card">
-        <h3>SEO Optimization</h3>
-        <p>Boost your visibility with SEO-friendly websites.</p>
+      <!-- Mobile only -->
+      <label for="nav-toggle" class="hamburger" aria-label="Open menu"><span></span></label>
+      <input type="checkbox" id="nav-toggle" aria-hidden="true" />
+    </div>
+
+    <!-- Drawer -->
+    <div class="drawer" aria-hidden="true">
+      <div class="container">
+        <a href="#solutions" onclick="document.getElementById('nav-toggle').checked=false">Solutions</a>
+        <a href="#stories" onclick="document.getElementById('nav-toggle').checked=false">Stories</a>
+        <a href="#hub" onclick="document.getElementById('nav-toggle').checked=false">Hub</a>
+        <a href="#contact" onclick="document.getElementById('nav-toggle').checked=false">Contact</a>
       </div>
     </div>
-  </section>
+  </header>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <p>© 2025 Xcode Technologies Pvt Ltd. All rights reserved.</p>
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <h1 id="hero-title">Cultivating Next-Gen Growth in Agriculture</h1>
+      <p>Smart insights, ethical innovation, and earth-wise practices—helping modern farms boost yield while protecting the planet.</p>
+      <p class="stack-xs">
+        <a class="btn btn-primary" href="#hub">Discover solutions</a>
+        <a class="btn btn-ghost" href="#stories">See field stories</a>
+      </p>
+      <figure class="hero-img" aria-label="Aerial view of terraced farmland">
+        <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1600&auto=format&fit=crop" alt="Aerial green farmlands with geometric patterns" loading="lazy" />
+      </figure>
+    </section>
+
+    <!-- INTRO + MEDIA TILES -->
+    <section id="stories" class="intro">
+      <div class="container intro-grid">
+        <div class="lead">
+          <span class="pill" aria-label="Category">AI</span>
+          <h2>Precision, powered by nature-first AI</h2>
+          <p class="muted">From irrigation timing to soil health, our tools learn from your fields to recommend what works—no guesswork, just measurable outcomes.</p>
+        </div>
+
+        <div class="media-tiles" role="list">
+          <article class="tile" role="listitem">
+            <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=1200&auto=format&fit=crop" alt="Terraced rice fields" loading="lazy">
+            <div class="tile-body">
+              <div class="kicker">Irrigation</div>
+              <h3>Water where it matters</h3>
+              <p>Forecast-aware schedules reduce waste up to 18%.</p>
+            </div>
+          </article>
+
+          <article class="tile" role="listitem">
+            <img src="images/img1.jpg" alt="Irrigation channel close-up" loading="lazy">
+            <div class="tile-body">
+              <div class="kicker">Soil</div>
+              <h3>Know your soil</h3>
+              <p>Sensor-driven insights to balance nutrients safely.</p>
+            </div>
+          </article>
+
+          <article class="tile" role="listitem">
+            <img src="images/img2.jpg" alt="Farmer with fresh greens" loading="lazy">
+            <div class="tile-body">
+              <div class="kicker">Community</div>
+              <h3>Grown together</h3>
+              <p>Local knowledge + data for resilient harvests.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER CTA -->
+    <section class="container banner" aria-labelledby="banner-title">
+      <img src="https://images.unsplash.com/photo-1469122312224-c5846569feb1?q=80&w=2000&auto=format&fit=crop" alt="" aria-hidden="true" loading="lazy">
+      <div class="content">
+        <h2 id="banner-title">Transform Your Farm. Empower Your Future.</h2>
+        <p class="muted" style="color:#e8f6ea">Adapt to climate shifts, cut inputs, and grow sustainably with data you own.</p>
+        <a class="btn btn-primary" href="#contact">Talk to an expert</a>
+      </div>
+      <a class="fab" href="#contact" aria-label="Open contact form">✉</a>
+    </section>
+
+    <!-- GREEN GROWTH HUB -->
+    <section id="hub" class="hub">
+      <div class="container hub-content">
+        <div class="grid">
+          <div>
+            <h2>The Green Growth Hub: Innovation &amp; Earthwise</h2>
+          </div>
+          <div>
+            <p>Explore tools, practices, and peer-tested methods that lift yields while restoring ecosystems. We design with farmers, for farmers—transparent, practical, and field-ready.</p>
+          </div>
+        </div>
+
+        <div class="cards" id="solutions" role="list">
+          <article class="card" role="listitem">
+            <img src="https://images.unsplash.com/photo-1472145246862-b24cf25c4a36?q=80&w=1200&auto=format&fit=crop" alt="Close-up of vibrant fungi and soil ecosystem" loading="lazy">
+            <div class="body">
+              <h3>Biology-first Inputs</h3>
+              <p>Microbial blends and compost strategies tuned to your soil for balanced fertility.</p>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img src="https://images.unsplash.com/photo-1516383607781-913a19294fd1?q=80&w=1200&auto=format&fit=crop" alt="Logistics and harvest planning" loading="lazy">
+            <div class="body">
+              <h3>Operational Planning</h3>
+              <p>Weather windows, labor planning, and equipment use—optimized in one simple view.</p>
+            </div>
+          </article>
+
+          <article class="card" role="listitem">
+            <img src="https://images.unsplash.com/photo-1545249390-6bdfa286032f?q=80&w=1200&auto=format&fit=crop" alt="Greenhouse with neon grow lights" loading="lazy">
+            <div class="body">
+              <h3>Protected Cultivation</h3>
+              <p>Greenhouse recipes and IPM playbooks to stabilize quality year-round.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact" aria-labelledby="contact-title">
+      <div class="container grid">
+        <div>
+          <h2 id="contact-title">We’d love to help</h2>
+          <div class="info stack-sm">
+            <p class="muted">Mon–Fri · 9:00–18:00 IST</p>
+            <p>Bloomterra HQ<br/> 18 Valley Road, Bangalore 560098</p>
+            <p><a href="mailto:hello@bloomterra.example">hello@bloomterra.example</a> · +91 123456789</p>
+          </div>
+
+          <form aria-label="Contact form" action="#" method="post" novalidate>
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g., Asha Verma" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required />
+              <div class="help">We’ll only use this to reply.</div>
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your goals…" required></textarea>
+            </div>
+            <label class="consent">
+              <input type="checkbox" name="consent" required />
+              <span>I agree to the processing of my information as described in the privacy notice.</span>
+            </label>
+            <button class="btn btn-primary" type="submit">Send message</button>
+          </form>
+        </div>
+
+        <figure class="hero-img" aria-label="Lush forest scenery">
+          <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1200&auto=format&fit=crop" alt="Lush green forest canopy with mist" loading="lazy" />
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container foot">
+      <div class="foot-top">
+        <div>
+          <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Bloomterra</span></div>
+          <p class="muted">Tools and practices for resilient, profitable, and regenerative agriculture.</p>
+        </div>
+
+        <nav aria-label="Product">
+          <h4>Product</h4>
+          <a href="#solutions">Solutions</a><br />
+          <a href="#hub">Green Growth Hub</a><br />
+          <a href="#stories">Case studies</a><br />
+          <a href="#contact">Pricing &amp; plans</a>
+        </nav>
+
+        <nav aria-label="Company">
+          <h4>Company</h4>
+          <a href="#">About</a><br />
+          <a href="#">Careers</a><br />
+          <a href="#">Press</a><br />
+          <a href="#">Sustainability</a>
+        </nav>
+
+        <nav aria-label="Resources">
+          <h4>Resources</h4>
+          <a href="#">Docs</a><br />
+          <a href="#">Guides</a><br />
+          <a href="#">Webinars</a><br />
+          <a href="#">Support</a>
+        </nav>
+      </div>
+
+      <div class="foot-bottom">
+        <small>© <span id="year">2025</span> Bloomterra. All rights reserved.</small>
+        <div>
+          <a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Optional: tiny progressive enhancement to keep the footer year current (safe, no layout impact)
+      document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
   </footer>
 </body>
 </html>
